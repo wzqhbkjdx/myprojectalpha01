@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">两机动力控制</string>
+
+    <string name="navigation_drawer_open" translatable="false">close drawer</string>
+    <string name="navigation_drawer_close" translatable="false">open drawer</string>
+
+    <string name="shared_img" translatable="false">shared_img</string>
+    <string name="share_title" translatable="false">shared_title</string>
+
+    <string name="dynamic">行业动态</string>
+    <string name="surrounding">行业周边</string>
+    <string name="futrue">行业未来</string>
+
+    <string name="hangkong">航空发动机公司成立</string>
+
+    <string name="load_fail">网络被外星人切断，稍后再试吧</string>
+    <string name="nva_knowledge">行业新闻</string>
+    <string name="nav_platform">行业平台</string>
+    <string name="nav_other">其他</string>
+    <string name="app">应用</string>
+    <string name="nav_share">分享</string>
+    <string name="nav_setting">设置</string>
+    <string name="action_about">关于</string>
+    <string name="version">版本1.0</string>
+    <string name="tips">贴士</string>
+    <string name="tips_content">浏览到下方时,双击标题栏可以快速回到顶部</string>
+    <string name="about_us">关于我们</string>
+    <string name="about_me_description">我们是一群专注燃机控制事业的科研人员,有需求可以与我们联系</string>
+    <string name="my_email">12345678@xx.com</string>
+</resources>

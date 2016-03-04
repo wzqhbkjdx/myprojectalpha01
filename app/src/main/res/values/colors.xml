@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_black_1000">#000000</color>
+    <color name="md_white_1000">#ffffff</color>
+
+    <color name="colorPrimary">#8f7b5e</color>
+    <color name="colorAccent">#df5115</color>
+    <color name="colorPrimaryDark">#5c311f</color>
+
+    <color name="cardview_dark_background">#FF202020</color>
+    <color name="lighter_gray">#ddd</color>
+
+    <color name="darker_gray">#aaa</color>
+</resources>
