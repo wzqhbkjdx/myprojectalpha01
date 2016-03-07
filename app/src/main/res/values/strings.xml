@@ -27,4 +27,6 @@
     <string name="about_us">关于我们</string>
     <string name="about_me_description">我们是一群专注燃机控制事业的科技工作者,有需求可以与我们联系</string>
     <string name="my_email">12345678@xx.com</string>
+    
+    <string name="HoneywellRss">http://www.prnasia.com/story/industry/AIR-1.atom</string>
 </resources>

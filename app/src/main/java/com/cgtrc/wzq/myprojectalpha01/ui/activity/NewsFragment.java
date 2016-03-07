@@ -28,9 +28,9 @@ public class NewsFragment extends RecyclerFragment implements NewsView{
     private NewsPresenter presenter;
 
 
-    public static NewsFragment newInstance(int type){
+    public static NewsFragment newInstance(String type){
         Bundle args = new Bundle();
-        args.putInt(Constants.TYPE,type);
+        args.putString(Constants.TYPE,type);
         NewsFragment fragment = new NewsFragment();
         fragment.setArguments(args);
         return fragment;
@@ -58,10 +58,14 @@ public class NewsFragment extends RecyclerFragment implements NewsView{
                 if(holder instanceof NewsRecyclerListAdapter.ViewHolder){
                     NewsRecyclerListAdapter.ViewHolder viewHolder = (NewsRecyclerListAdapter.ViewHolder)holder;
                     Intent intent = new Intent(getActivity(),NewDetailActivity.class);
-                    //启动新闻详情页
+                    //点击新闻条目,启动新闻详情页 后续补充
+
+
+
                 }
             }
         });
+
         recyclerView.setAdapter(adapter);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

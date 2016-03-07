@@ -48,7 +48,7 @@ public class NewsRecyclerListAdapter extends RecyclerView.Adapter<RecyclerView.V
     }
 
     public void addNews(NewsItem newsItem){
-        this.newsItem = newsItem;
+        this.newsItem = newsItem;  //得到新闻条目 对viewHolder进行适配
         notifyDataSetChanged();
     }
 
@@ -92,7 +92,8 @@ public class NewsRecyclerListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return newsItems.size();
+//        return newsItems.size();
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

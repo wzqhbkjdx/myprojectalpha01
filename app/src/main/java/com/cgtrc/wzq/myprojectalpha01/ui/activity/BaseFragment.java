@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.cgtrc.wzq.myprojectalpha01.ProjectApp;
+
 import butterknife.ButterKnife;
+import io.realm.Realm;
 
 /**
  * Created by bym on 16/3/3.
@@ -15,6 +18,7 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends Fragment {
     protected View rootView;
     protected int layoutId;
+    protected Realm realm;
 
     @Nullable
     @Override
@@ -36,6 +40,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        realm = Realm.getDefaultInstance();//得到Realm数据库实例
     }
 
     @Override
@@ -53,6 +58,8 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        ProjectApp.getWatcher(getActivity()).watch(this); //Application实例产生一个RefWatcher进行内存泄漏监测
+        realm.close();
     }
 
     public boolean isLive(){

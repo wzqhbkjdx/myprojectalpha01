@@ -3,6 +3,7 @@
     package="com.cgtrc.wzq.myprojectalpha01">
 
     <application
+        android:name=".ProjectApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

@@ -24,10 +24,7 @@ public class AboutActivity extends BaseActivity{
         return layoutId;
     }
 
-    @Override
-    protected void initPresenter() {
 
-    }
 
     @Override
     protected void initData() {

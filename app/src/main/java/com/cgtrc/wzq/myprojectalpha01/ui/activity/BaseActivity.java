@@ -7,17 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.cgtrc.wzq.myprojectalpha01.R;
-import com.cgtrc.wzq.myprojectalpha01.presenter.BasePresenter;
+import com.umeng.analytics.MobclickAgent;
 
 import butterknife.Bind;
+import io.realm.Realm;
 
 /**
  * Created by bym on 16/3/5.
  */
-public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     protected Toolbar toolbar;
+
+    protected Realm realm;
 
     protected int layoutId;
 
@@ -34,18 +37,29 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected void initView(){
         getLayoutId();
         setContentView(layoutId);
-        //ButterKnife.bind(this);
-        //initToolbar();
+        realm = Realm.getDefaultInstance();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        MobclickAgent.onResume(this);//友盟数据统计
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (null != realm) {
+            realm.close();
+        }
+        //是否需要对Activity进行内存泄露监测,需要进一步考量
+//        ProjectApp.getWatcher(getActivity()).watch(this); //Application实例产生一个RefWatcher进行内存泄漏监测
     }
 
     abstract protected void initToolbar();
@@ -64,7 +78,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     protected abstract int getLayoutId();
 
-    protected abstract void initPresenter();
 
     protected abstract void initData();
 

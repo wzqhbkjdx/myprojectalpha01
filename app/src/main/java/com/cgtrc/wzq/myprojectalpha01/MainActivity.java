@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.cgtrc.wzq.myprojectalpha01.ui.activity.AboutActivity;
 import com.cgtrc.wzq.myprojectalpha01.ui.activity.BaseActivity;
 import com.cgtrc.wzq.myprojectalpha01.ui.activity.ContentFragment;
+import com.testin.agent.TestinAgent;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
         Log.i("MainActivity","初始化侧滑菜单");
         replace(ContentFragment.MENU_NEWS);
         Log.i("MainActivity","替换fragment");
+        TestinAgent.init(this, "df8e4b39e329e8e2bea19618b3d7c9c4", "your channel ID"); //崩溃分析 面包屑
     }
 
     /**
@@ -94,13 +96,6 @@ public class MainActivity extends BaseActivity {
         return layoutId;
     }
 
-    /**
-     * 初始化presenter
-     */
-    @Override
-    protected void initPresenter() {
-
-    }
 
     @Override
     protected void initData() {
@@ -143,5 +138,12 @@ public class MainActivity extends BaseActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        super.onActivityReenter(resultCode, data);
+//        supportPostponeEnterTransition();
+
     }
 }

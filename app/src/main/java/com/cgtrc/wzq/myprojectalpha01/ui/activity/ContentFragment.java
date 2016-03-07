@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 
 import com.cgtrc.wzq.myprojectalpha01.R;
+import com.cgtrc.wzq.myprojectalpha01.module.NewsItem;
 import com.cgtrc.wzq.myprojectalpha01.utils.Constants;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class ContentFragment extends BaseFragment {
     protected void initViews() {
         adapter = new NewsTabPageAdapter(getChildFragmentManager());
         initFragments();
-
+        viewPager.setAdapter(adapter);
     }
 
     private void initFragments() {
@@ -66,14 +67,17 @@ public class ContentFragment extends BaseFragment {
             };
             this.titles = Arrays.asList(titles);
             for(int i = 0; i < titles.length; i++){
-                recyclerFragmentsList.add(new NewsFragment()); //fragment嵌套fragment
+                NewsItem newsItem = new NewsItem();
+                NewsFragment newsFragment = NewsFragment.newInstance(menuType);
+
+//                newsFragment.addNews(newsItem); //fragment attach到父控件的时候,才会生成adapter,所以此时的adapter为空,所以出现空指针异常
+                recyclerFragmentsList.add(newsFragment); //fragment嵌套fragment
             }
         } else {
 
         }
 
         adapter.setFragments(recyclerFragmentsList,titles);
-        viewPager.setAdapter(adapter);
     }
 
     @Override

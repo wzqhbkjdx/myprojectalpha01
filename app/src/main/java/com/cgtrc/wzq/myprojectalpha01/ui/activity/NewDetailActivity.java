@@ -15,10 +15,7 @@ public class NewDetailActivity extends BaseActivity {
         return 0;
     }
 
-    @Override
-    protected void initPresenter() {
 
-    }
 
     @Override
     protected void initData() {
