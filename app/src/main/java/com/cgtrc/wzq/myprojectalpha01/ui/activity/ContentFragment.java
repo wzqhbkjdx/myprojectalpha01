@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.cgtrc.wzq.myprojectalpha01.R;
 import com.cgtrc.wzq.myprojectalpha01.utils.Constants;
@@ -58,19 +59,21 @@ public class ContentFragment extends BaseFragment {
 
     private void initFragments() {
         menuType = getArguments().getString(Constants.TYPE);
+        Log.i("ContentFragment",menuType);
         if(MENU_NEWS.equals(menuType)){
             String[] titles = new String[] {
                 getString(R.string.dynamic), getString(R.string.surrounding), getString(R.string.futrue)
             };
             this.titles = Arrays.asList(titles);
             for(int i = 0; i < titles.length; i++){
-                recyclerFragmentsList.add(new NewsFragment());
+                recyclerFragmentsList.add(new NewsFragment()); //fragment嵌套fragment
             }
         } else {
 
         }
 
         adapter.setFragments(recyclerFragmentsList,titles);
+        viewPager.setAdapter(adapter);
     }
 
     @Override

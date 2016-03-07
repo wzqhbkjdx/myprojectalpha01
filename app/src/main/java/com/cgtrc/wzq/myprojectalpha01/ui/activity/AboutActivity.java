@@ -9,13 +9,30 @@ public class AboutActivity extends BaseActivity{
 
 
     @Override
+    protected void initView() {
+        super.initView();
+    }
+
+    @Override
+    protected void initToolbar() {
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        layoutId = R.layout.activity_about;
+        return layoutId;
+    }
+
+    @Override
     protected void initPresenter() {
 
     }
 
     @Override
-    protected int getLayout() {
-        layoutId = R.layout.activity_about;
-        return layoutId;
+    protected void initData() {
+
     }
+
+
 }
