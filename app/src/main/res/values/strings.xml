@@ -29,4 +29,5 @@
     <string name="my_email">12345678@xx.com</string>
     
     <string name="HoneywellRss">http://www.prnasia.com/story/industry/AIR-1.atom</string>
+    <string name="unknow">未知</string>
 </resources>

@@ -34,6 +34,8 @@ public abstract class RecyclerFragment extends BaseFragment implements SwipeRefr
         }
     }
 
+
+
     public RecyclerView getRecyclerView() {
         return recyclerView;
     }

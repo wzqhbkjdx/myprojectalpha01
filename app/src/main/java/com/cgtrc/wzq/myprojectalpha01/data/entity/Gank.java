@@ -23,7 +23,7 @@ public class Gank extends Soul implements Cloneable,Serializable {
      * this item is header type of gank or not,if true, this item will show category name
      */
     public boolean Header;
-    public boolean is妹子(){
+    public boolean is妹子() {
         return type.equals(GankCategory.福利.name());
     }
 

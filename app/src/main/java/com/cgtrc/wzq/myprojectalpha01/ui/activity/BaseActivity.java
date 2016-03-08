@@ -64,11 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     abstract protected void initToolbar();
 
-    private void checkPresenterIsNull() {
-//        if(mPresenter == null) {
-//            throw new IllegalStateException("please init mPresenter in initPresenter() method ");
-//        }
-    }
+
 
     public void replaceFragment(Fragment fragment, String tag) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

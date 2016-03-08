@@ -3,6 +3,7 @@ package com.cgtrc.wzq.myprojectalpha01;
 import android.app.Application;
 import android.content.Context;
 
+import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -25,6 +26,13 @@ public class ProjectApp extends Application {
         context = this;
         Logger.init();
         setupRealm();//配置Realm数据库
+
+        //只有调试模式下 才启用日志输出
+        if(BuildConfig.DEBUG){
+            Logger.init("Gank").hideThreadInfo().setMethodCount(0);
+        }else{
+            Logger.init("Gank").setLogLevel(LogLevel.NONE);
+        }
     }
 
     private void setupRealm() {

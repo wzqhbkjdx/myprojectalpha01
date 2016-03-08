@@ -1,0 +1,44 @@
+<html>
+<head>
+    <style type="text/css">
+        * {
+        word-wrap: break-word;
+        }
+        {style-placeholder}
+        a {
+        color: #{link-color};
+        }
+        a:active {
+        color: #{link-color-active};
+        }
+        ol {
+        list-style-position: inside;
+        padding-left: 0;
+        padding-right: 0;
+        }
+        li:not(:first-child) {
+        padding-top: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        function showAbout() {
+            Android.showAbout();
+        }
+    </script>
+</head>
+<body>
+
+<h3>Version 1.1</h3>
+<p>
+    GankDaily,每日提供技术干货的App。
+</p>
+<ol>
+    <li><b>优化:</b> 妹子视图中点击跳转逻辑(01-14)</li>
+    <li><b>优化:</b> 使用 glide 作为妹子视图页的图片加载引擎，有效解决页面卡顿问题(11-24)</li>
+    <li><b>修改:</b> iOS字母大小写问题(11-24)</li>
+</ol>
+<p>获取最新GankDaily的动态，可通过以下方式<br><br>
+    微博&nbsp;&nbsp;<a href='http://weibo.com/u/1874136301'>@大侠咕咚</a><br>
+</p>
+<a onClick="showAbout()" href="#">关于GankDaily</a>
+</body>

@@ -13,7 +13,6 @@ import com.cgtrc.wzq.myprojectalpha01.interf.NewsPresenter;
 import com.cgtrc.wzq.myprojectalpha01.interf.NewsView;
 import com.cgtrc.wzq.myprojectalpha01.interf.OnListFragmentInteract;
 import com.cgtrc.wzq.myprojectalpha01.module.NewsItem;
-import com.cgtrc.wzq.myprojectalpha01.presenter.NewsDataPresenter;
 import com.cgtrc.wzq.myprojectalpha01.utils.Constants;
 import com.cgtrc.wzq.myprojectalpha01.utils.UiUtils;
 
@@ -26,6 +25,11 @@ public class NewsFragment extends RecyclerFragment implements NewsView{
     private LinearLayoutManager layoutManager;
     private NewsRecyclerListAdapter adapter;
     private NewsPresenter presenter;
+
+    /**
+     * the flag of has more data or not
+     */
+    private boolean mHasMoreData = true;
 
 
     public static NewsFragment newInstance(String type){
@@ -76,7 +80,13 @@ public class NewsFragment extends RecyclerFragment implements NewsView{
                 if (newState == RecyclerView.SCROLL_STATE_IDLE
                         && lastVisibleItem + 1 == adapter.getItemCount()
                         && adapter.isHasFooter()) {
-                    presenter.loadBefore();
+
+                    /**加载以前的数据
+                     *
+                     */
+
+
+//                    presenter.loadBefore();
                 }
             }
         });
@@ -90,7 +100,7 @@ public class NewsFragment extends RecyclerFragment implements NewsView{
 
     @Override
     protected void initData() {
-        presenter = new NewsDataPresenter();
+//        presenter = new NewsDataPresenter();
         initBanner();
         onRefresh();
     }
@@ -103,7 +113,12 @@ public class NewsFragment extends RecyclerFragment implements NewsView{
     @Override
     public void onRefresh() {
         adapter.clear();
-        presenter.loadNews();
+
+
+        /**
+         * 加载最新的数据
+         */
+//        presenter.loadNews();
     }
 
     @Override
